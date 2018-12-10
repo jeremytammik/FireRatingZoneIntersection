@@ -1,25 +1,12 @@
 using System;
 using System.Collections.Generic;
-//using System.ComponentModel;
-//using System.Data;
-//using System.Data.SqlClient;
-//using System.IO;
-using System.Linq;
-//using System.Text.RegularExpressions;
-using Autodesk.Revit.DB;
-//using Autodesk.Revit.DB.Architecture;
-using Autodesk.Revit.UI;
-//using Autodesk.Revit.UI.Selection;
-//using Microsoft.Win32;
-//using System.Windows.Forms;
-//using AddPanel.Classes;
-//using Autodesk.Revit.DB.Structure;
-//using Autodesk.Revit.DB.Analysis;
 using System.Diagnostics;
+using System.Linq;
+using Autodesk.Revit.DB;
+using Autodesk.Revit.UI;
 using ClipperLib;
 using Polygon = System.Collections.Generic.List<ClipperLib.IntPoint>;
 using Polygons = System.Collections.Generic.List<System.Collections.Generic.List<ClipperLib.IntPoint>>;
-//using Microsoft.JScript.Vsa;
 
 namespace FireRatingZoneIntersection
 {
