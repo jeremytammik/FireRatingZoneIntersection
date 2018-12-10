@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+using Autodesk.Revit.ApplicationServices;
 using Autodesk.Revit.DB;
-using Autodesk.Revit.UI;
 using ClipperLib;
 using Polygon = System.Collections.Generic.List<ClipperLib.IntPoint>;
 using Polygons = System.Collections.Generic.List<System.Collections.Generic.List<ClipperLib.IntPoint>>;
-using Autodesk.Revit.ApplicationServices;
 
 namespace FireRatingZoneIntersection
 {
@@ -146,11 +143,6 @@ namespace FireRatingZoneIntersection
     {
       List<CurveArray> Results = new List<CurveArray>();
 
-      //UIApplication uiapp = commandData.Application;
-      //UIDocument uidoc = uiapp.ActiveUIDocument;
-      //Autodesk.Revit.ApplicationServices.Application app = uiapp.Application;
-      //Document doc = uidoc.Document;
-
       Document doc = boundary.Document;
       Application app = doc.Application;
 
@@ -169,9 +161,6 @@ namespace FireRatingZoneIntersection
       Polygons intersection = new Polygons();
 
       Clipper c = new Clipper();
-
-      //c.AddPolygons( subj, PolyType.ptSubject );
-      //c.AddPolygons( clip, PolyType.ptClip );
 
       c.AddPaths( subj, PolyType.ptSubject, true );
       c.AddPaths( clip, PolyType.ptClip, true );
