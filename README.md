@@ -16,6 +16,10 @@ Here is the result of the firdst test run, producing new floor elements to repre
 
 ![Test run result](img/fire_rating_zone_intersection_result.png)
 
+For more details, please refer
+to [The Building Coder](https://thebuildingcoder.typepad.com) discussion
+of [...]().
+
 
 ## Authors
 
