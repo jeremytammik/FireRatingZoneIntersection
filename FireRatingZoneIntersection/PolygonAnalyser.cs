@@ -7,6 +7,7 @@ using Autodesk.Revit.UI;
 using ClipperLib;
 using Polygon = System.Collections.Generic.List<ClipperLib.IntPoint>;
 using Polygons = System.Collections.Generic.List<System.Collections.Generic.List<ClipperLib.IntPoint>>;
+using Autodesk.Revit.ApplicationServices;
 
 namespace FireRatingZoneIntersection
 {
@@ -36,14 +37,12 @@ namespace FireRatingZoneIntersection
         return _eps > d
           ? 0
           : (long) ( _feet_to_mm * d + 0.5 );
-
       }
       else
       {
         return _eps > -d
           ? 0
           : (long) ( _feet_to_mm * d - 0.5 );
-
       }
     }
 
@@ -142,15 +141,18 @@ namespace FireRatingZoneIntersection
     }
 
     public List<CurveArray> Execute(
-      ExternalCommandData commandData,
-      ref string message, Floor boundary, Floor eave )
+      Floor boundary, 
+      Floor eave )
     {
       List<CurveArray> Results = new List<CurveArray>();
 
-      UIApplication uiapp = commandData.Application;
-      UIDocument uidoc = uiapp.ActiveUIDocument;
-      Autodesk.Revit.ApplicationServices.Application app = uiapp.Application;
-      Document doc = uidoc.Document;
+      //UIApplication uiapp = commandData.Application;
+      //UIDocument uidoc = uiapp.ActiveUIDocument;
+      //Autodesk.Revit.ApplicationServices.Application app = uiapp.Application;
+      //Document doc = uidoc.Document;
+
+      Document doc = boundary.Document;
+      Application app = doc.Application;
 
       // Two slabs to intersect.
 

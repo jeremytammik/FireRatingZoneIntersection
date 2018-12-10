@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using Autodesk.Revit.ApplicationServices;
+using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using ClipperLib;
@@ -10,9 +12,10 @@ using Polygons = System.Collections.Generic.List<System.Collections.Generic.List
 
 namespace FireRatingZoneIntersection
 {
+  [Transaction( TransactionMode.Manual )]
   class Command : IExternalCommand
   {
-    private void SubDivideSoffits_CreateFireRatedLayers( ExternalCommandData revit, Document doc )
+    void SubDivideSoffits_CreateFireRatedLayers( Document doc )
     {
       try
       {
@@ -221,8 +224,7 @@ namespace FireRatingZoneIntersection
 
               #region Get Intersection of Boundary and eave
               PolygonAnalyser com = new PolygonAnalyser();
-              string RefString = "";
-              List<CurveArray> CArray = com.Execute( revit, ref RefString, BoundryElement as Floor, Soffit as Floor );
+              List<CurveArray> CArray = com.Execute( BoundryElement as Floor, Soffit as Floor );
 
               Level L = doc.GetElement( Soffit.LevelId ) as Level;
 
@@ -503,7 +505,13 @@ namespace FireRatingZoneIntersection
       ref string message, 
       ElementSet elements )
     {
-      throw new NotImplementedException();
+      UIApplication uiapp = commandData.Application;
+      UIDocument uidoc = uiapp.ActiveUIDocument;
+      Document doc = uidoc.Document;
+
+      SubDivideSoffits_CreateFireRatedLayers( doc );
+
+      return Result.Succeeded;
     }
   }
 }
