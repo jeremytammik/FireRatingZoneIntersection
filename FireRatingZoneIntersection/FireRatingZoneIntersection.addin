@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command FireRatingZoneIntersection</Text>
+    <Description>Some description for FireRatingZoneIntersection</Description>
+    <Assembly>FireRatingZoneIntersection.dll</Assembly>
+    <FullClassName>FireRatingZoneIntersection.Command</FullClassName>
+    <ClientId>c49d1a48-221e-4d08-985e-0a81960560cb</ClientId>
+    <VendorId>com.typepad.thebuildingcoder</VendorId>
+    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>
