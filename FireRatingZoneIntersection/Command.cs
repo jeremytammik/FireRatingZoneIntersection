@@ -380,6 +380,7 @@ namespace FireRatingZoneIntersection
 
     const double _inch = 1.0 / 12.0;
     const double _sixteenth = _inch / 16.0;
+
     static Curve CreateReversedCurve(
 
     Curve orig )
@@ -397,6 +398,7 @@ namespace FireRatingZoneIntersection
           "CreateReversedCurve - Unreachable" );
       }
     }
+
     public List<Curve> SortCurvesContiguous(
     IList<Curve> curves,
     bool debug_output )
@@ -493,7 +495,6 @@ namespace FireRatingZoneIntersection
         }
       }
       return curves.ToList();
-
     }
 
     public class PolygonAnyliser
@@ -667,10 +668,8 @@ namespace FireRatingZoneIntersection
 
         if( 0 < intersection.Count )
         {
-
           foreach( Polygon poly in intersection )
           {
-
             CurveArray curves = app.Create.NewCurveArray();
             IntPoint? p0 = null; // first
             IntPoint? p = null; // previous
