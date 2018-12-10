@@ -168,15 +168,7 @@ namespace FireRatingZoneIntersection
               using( Transaction T = new Transaction( doc, "Delete Soffit" ) )
               {
                 T.Start();
-                try
-                {
-                  doc.Delete( Soffit.Id );
-                }
-                catch( Exception ex )
-                {
-                  T.RollBack();
-                }
-                doc.Regenerate();
+                doc.Delete( Soffit.Id );
                 T.Commit();
               }
               #endregion
@@ -207,17 +199,8 @@ namespace FireRatingZoneIntersection
                 using( Transaction T = new Transaction( doc, "Make Segment" ) )
                 {
                   T.Start();
-                  try
-                  {
-                    Floor newFloor = doc.Create.NewFloor( CA, FT, Lvl, false );
-
-                    newFloor.LookupParameter( "Height Offset From Level" ).SetValueString( Offset.ToString() );
-                  }
-                  catch( Exception ex )
-                  {
-                    T.RollBack();
-                  }
-                  doc.Regenerate();
+                  Floor newFloor = doc.Create.NewFloor( CA, FT, Lvl, false );
+                  newFloor.LookupParameter( "Height Offset From Level" ).SetValueString( Offset.ToString() );
                   T.Commit();
                 }
 
@@ -274,7 +257,6 @@ namespace FireRatingZoneIntersection
 
                 #region Close the loop if nesesary
                 CurveLoop CL = new CurveLoop();
-                int a = 0;
                 foreach( Curve curv in Curves )
                 {
                   CL.Append( curv );
