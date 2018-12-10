@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command.cs" />
+    <Compile Include="PolygonAnalyser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Triangle.cs" />
     <Compile Include="TrianglePair.cs" />
