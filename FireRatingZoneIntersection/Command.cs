@@ -654,9 +654,11 @@ namespace FireRatingZoneIntersection
 
         Clipper c = new Clipper();
 
-        c.AddPolygons( subj, PolyType.ptSubject );
+        //c.AddPolygons( subj, PolyType.ptSubject );
+        //c.AddPolygons( clip, PolyType.ptClip );
 
-        c.AddPolygons( clip, PolyType.ptClip );
+        c.AddPaths( subj, PolyType.ptSubject, true );
+        c.AddPaths( clip, PolyType.ptClip, true );
 
         c.Execute( ClipType.ctIntersection, intersection,
           PolyFillType.pftEvenOdd, PolyFillType.pftEvenOdd );
@@ -688,10 +690,8 @@ namespace FireRatingZoneIntersection
               }
               p = q;
             }
-
             Results.Add( curves );
           }
-
         }
         return Results;
       }
