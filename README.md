@@ -11,7 +11,7 @@ on [automatic creation of void extrusion and retrieval of cut area from element]
 
 ## Authors
 
-- [Jack Bird](https://forums.autodesk.com/t5/user/viewprofilepage/user-id/6830764) in
+- [Jack Bird](https://forums.autodesk.com/t5/user/viewprofilepage/user-id/6830764)
 - Jeremy Tammik,
 [The Building Coder](http://thebuildingcoder.typepad.com),
 [Forge](http://forge.autodesk.com) [Platform](https://developer.autodesk.com) Development,
