@@ -12,7 +12,7 @@ The test sample model looks like this:
 
 ![Test sample model](img/fire_rating_zone_intersection_model.png)
 
-Here is the result of the firdst test run, producing new floor elements to represent the soffits overlapping the fire zone:
+Here is the result of the firdst test run, producing new floor elements to represent the parts of the soffits overlapping the fire zone:
 
 ![Test run result](img/fire_rating_zone_intersection_result.png)
 
