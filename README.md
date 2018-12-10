@@ -18,7 +18,7 @@ Here is the result of the firdst test run, producing new floor elements to repre
 
 For more details, please refer
 to [The Building Coder](https://thebuildingcoder.typepad.com) discussion
-of [...]().
+on [fire rating zone intersection](https://thebuildingcoder.typepad.com/blog/2018/12/fire-rating-zone-intersection.html).
 
 
 ## Authors
