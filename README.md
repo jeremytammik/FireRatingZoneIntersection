@@ -8,6 +8,14 @@ on [automatic creation of void extrusion and retrieval of cut area from element]
 
 ![Fire Rating Zone Intersection](img/fire_rating_zone_intersection.png)
 
+The test sample model looks like this:
+
+![Test sample model](img/fire_rating_zone_model.png)
+
+Here is the result of the firdst test run, producing new floor elements to represent the soffits overlapping the fire zone:
+
+![Test run result](img/fire_rating_zone_result.png)
+
 
 ## Authors
 
